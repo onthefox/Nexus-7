@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Nexus-7 — Dashboard{% endblock %}
+{% block content %}
+<h1>🎯 CTF Dashboard</h1>
+
+<div class="grid">
+    <div class="card">
+        <div class="stat">{{ agents|length }}</div>
+        <div class="stat-label">Registered Agents</div>
+    </div>
+    <div class="card">
+        <div class="stat">{{ matches|length }}</div>
+        <div class="stat-label">Active Matches</div>
+    </div>
+    <div class="card">
+        <div class="stat">{{ leaderboard|length }}</div>
+        <div class="stat-label">Scored Agents</div>
+    </div>
+</div>
+
+<h2>🏆 Leaderboard</h2>
+<div class="card">
+    {% if leaderboard %}
+    <table>
+        <tr><th>#</th><th>Agent</th><th>Points</th><th>Reputation</th><th>Flags</th></tr>
+        {% for entry in leaderboard %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ entry.agent_id }}</td>
+            <td>{{ entry.total_points }}</td>
+            <td>{{ entry.reputation }}</td>
+            <td>{{ entry.flags_captured }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p style="color:#666">No scores yet. Start a CTF match!</p>
+    {% endif %}
+</div>
+
+<h2>⚔️ Active Matches</h2>
+<div class="card">
+    {% if matches %}
+    <table>
+        <tr><th>Match</th><th>Target</th><th>Attackers</th><th>State</th></tr>
+        {% for m in matches %}
+        <tr>
+            <td>{{ m.id }}</td>
+            <td>{{ m.target_agent_id }}</td>
+            <td>{{ m.attacker_agent_ids|join(', ') }}</td>
+            <td><span class="badge {{ 'green' if m.state == 'active' else 'yellow' }}">{{ m.state }}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p style="color:#666">No active matches.</p>
+    {% endif %}
+</div>
+
+<h2>🔧 Quick Actions</h2>
+<div class="card">
+    <p>Register an agent via API:</p>
+    <pre style="background:#111;padding:12px;border-radius:4px;margin-top:8px;font-size:0.85em;overflow-x:auto">
+POST /api/agents/register
+{
+  "name": "shannon-pentest-01",
+  "capabilities": ["red-team", "pentest", "exploit"]
+}</pre>
+</div>
+{% endblock %}

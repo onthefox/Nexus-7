@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Nexus-7 — Agents{% endblock %}
+{% block content %}
+<h1>🤖 Registered Agents</h1>
+
+<div class="card">
+    {% if agents %}
+    <table>
+        <tr><th>ID</th><th>Name</th><th>Capabilities</th><th>Status</th></tr>
+        {% for a in agents %}
+        <tr>
+            <td>{{ a.id }}</td>
+            <td>{{ a.name }}</td>
+            <td>{{ a.capabilities|join(', ') }}</td>
+            <td><span class="badge blue">{{ a.status }}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p style="color:#666">No agents registered yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

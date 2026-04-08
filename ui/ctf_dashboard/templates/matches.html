@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Nexus-7 — Matches{% endblock %}
+{% block content %}
+<h1>⚔️ CTF Matches</h1>
+
+<div class="card">
+    {% if matches %}
+    <table>
+        <tr><th>ID</th><th>Target</th><th>Attackers</th><th>Flags</th><th>State</th></tr>
+        {% for m in matches %}
+        <tr>
+            <td>{{ m.id }}</td>
+            <td>{{ m.target_agent_id }}</td>
+            <td>{{ m.attacker_agent_ids|length }} agents</td>
+            <td>{{ m.flags|default([])|length }}</td>
+            <td>
+                {% if m.state == 'active' %}
+                <span class="badge green">Active</span>
+                {% elif m.state == 'resolved' %}
+                <span class="badge blue">Resolved</span>
+                {% elif m.state == 'timeout' %}
+                <span class="badge yellow">Timeout</span>
+                {% else %}
+                <span class="badge red">{{ m.state }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p style="color:#666">No matches yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nexus-7{% endblock %}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0f; color: #e0e0e0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        nav { background: #111; padding: 16px 20px; border-bottom: 1px solid #222; }
+        nav a { color: #4fc3f7; text-decoration: none; margin-right: 20px; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+        nav .brand { color: #fff; font-size: 1.2em; font-weight: bold; margin-right: 30px; }
+        h1 { color: #4fc3f7; margin-bottom: 20px; }
+        h2 { color: #81c784; margin: 16px 0 8px; }
+        .card { background: #151520; border: 1px solid #2a2a3a; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+        th { color: #4fc3f7; font-weight: 600; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; }
+        .badge.green { background: #1b5e20; color: #81c784; }
+        .badge.yellow { background: #f57f17; color: #fff; }
+        .badge.red { background: #b71c1c; color: #ef9a9a; }
+        .badge.blue { background: #0d47a1; color: #90caf9; }
+        .stat { font-size: 2em; font-weight: bold; color: #4fc3f7; }
+        .stat-label { font-size: 0.9em; color: #888; }
+        footer { text-align: center; padding: 20px; color: #555; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand">🦊 Nexus-7</a>
+        <a href="/">Dashboard</a>
+        <a href="/agents">Agents</a>
+        <a href="/matches">Matches</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>Nexus-7 CTF-OS Ecosystem — Autonomous Proving Grounds for AI Agents</footer>
+</body>
+</html>
