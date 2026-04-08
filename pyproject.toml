@@ -1,0 +1,22 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["core", "engine", "meta", "ui", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["core", "engine", "meta", "ui"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+strict_optional = true
