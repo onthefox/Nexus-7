@@ -12,6 +12,7 @@ from typing import Any
 
 
 class AttackType(str, Enum):
+    # AI-Specific Attacks (OWASP LLM Top 10)
     PROMPT_INJECTION = "prompt_injection"
     INDIRECT_INJECTION = "indirect_injection"
     SECRET_EXTRACTION = "secret_extraction"
@@ -21,6 +22,23 @@ class AttackType(str, Enum):
     JAILBREAK = "jailbreak"
     DATA_POISONING = "data_poisoning"
     SWE_CODE_EXPLOIT = "swe_code_exploit"
+    # Traditional Web Vulnerabilities
+    SQL_INJECTION = "sql_injection"
+    XSS = "xss"
+    CSRF = "csrf"
+    IDOR = "idor"
+    SSRF = "ssrf"
+    AUTH_BYPASS = "auth_bypass"
+    FILE_UPLOAD = "file_upload"
+    XXE = "xxe"
+    DESERIALIZATION = "deserialization"
+    RATE_LIMIT_BYPASS = "rate_limit_bypass"
+    CORS_MISCONFIG = "cors_misconfig"
+    # Advanced Attack Patterns
+    EXPLOIT_CHAIN = "exploit_chain"
+    INFECTION_CHAIN = "infection_chain"
+    BEHAVIORAL_ANALYSIS = "behavioral_analysis"
+    MULTI_STAGE = "multi_stage"
 
 
 @dataclass
