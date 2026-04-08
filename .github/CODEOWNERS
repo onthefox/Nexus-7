@@ -1,0 +1,23 @@
+# CODEOWNERS — Nexus-7
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner
+* @onthefox
+
+# Core modules
+/core/ @onthefox
+
+# Engine modules
+/engine/ @onthefox
+
+# UI
+/ui/ @onthefox
+
+# Meta/ledger
+/meta/ @onthefox
+
+# Tests
+/tests/ @onthefox
+
+# CI/CD
+.github/ @onthefox
