@@ -1,0 +1,95 @@
+{
+  "session_id": "audit-1775615098",
+  "metrics": {
+    "total_events": 6,
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "total_duration": 0,
+    "agents": {
+      "shannon": {
+        "events": 6,
+        "tokens": 0,
+        "cost": 0,
+        "errors": 0
+      }
+    },
+    "start_time": 1775615098.255542,
+    "elapsed_seconds": 0.0,
+    "tokens_per_second": 0.0,
+    "cost_per_hour": 0.0
+  },
+  "events": [
+    {
+      "agent": "shannon",
+      "action": "preflight_passed",
+      "timestamp": 1775615098.2556298,
+      "duration": 0,
+      "tokens_used": 0,
+      "cost_usd": 0,
+      "success": true,
+      "error": "",
+      "metadata": {
+        "checks": {
+          "target": true,
+          "config": true,
+          "credentials": true
+        }
+      }
+    },
+    {
+      "agent": "shannon",
+      "action": "pre_recon_start",
+      "timestamp": 1775615098.2556877,
+      "duration": 0,
+      "tokens_used": 0,
+      "cost_usd": 0,
+      "success": true,
+      "error": "",
+      "metadata": {}
+    },
+    {
+      "agent": "shannon",
+      "action": "recon_start",
+      "timestamp": 1775615098.2557135,
+      "duration": 0,
+      "tokens_used": 0,
+      "cost_usd": 0,
+      "success": true,
+      "error": "",
+      "metadata": {}
+    },
+    {
+      "agent": "shannon",
+      "action": "vuln_analysis_start",
+      "timestamp": 1775615098.2557344,
+      "duration": 0,
+      "tokens_used": 0,
+      "cost_usd": 0,
+      "success": true,
+      "error": "",
+      "metadata": {}
+    },
+    {
+      "agent": "shannon",
+      "action": "exploitation_start",
+      "timestamp": 1775615098.2557483,
+      "duration": 0,
+      "tokens_used": 0,
+      "cost_usd": 0,
+      "success": true,
+      "error": "",
+      "metadata": {}
+    },
+    {
+      "agent": "shannon",
+      "action": "reporting_start",
+      "timestamp": 1775615098.2557583,
+      "duration": 0,
+      "tokens_used": 0,
+      "cost_usd": 0,
+      "success": true,
+      "error": "",
+      "metadata": {}
+    }
+  ]
+}
