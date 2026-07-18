@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus-7 — ARCHITECTURE.md &mdash; SymbioCTF 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SymbioCTF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#nexus-orchestrator-models-module">nexus_orchestrator.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#nexus-orchestrator-orchestrator-module">nexus_orchestrator.orchestrator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SymbioCTF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Nexus-7 — ARCHITECTURE.md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ARCHITECTURE.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nexus-7-architecture-md">
+<h1>Nexus-7 — ARCHITECTURE.md<a class="headerlink" href="#nexus-7-architecture-md" title="Link to this heading"></a></h1>
+<blockquote>
+<div><p><strong>SPARC Design Phase</strong> — System Architecture for the CTF-OS Ecosystem
+Autonomous Proving Grounds for AI Agents</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="system-overview">
+<h2>1. System Overview<a class="headerlink" href="#system-overview" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────────────────────────────────────────────────────────┐
+│                          NEXUS-7 CTF-OS ECOSYSTEM                        │
+│                                                                          │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
+│  │   CORE       │  │   ENGINE     │  │     UI       │  │    META      │  │
+│  │             │  │              │  │              │  │              │  │
+│  │ SymbioCTF   │  │  Gauntlet    │  │  CTF         │  │  Ledger      │  │
+│  │ (CTF Engine)│  │ (Red-Team)   │  │  Dashboard   │  │ (Blockchain) │  │
+│  │             │  │              │  │  (Web)       │  │  (DIDs)      │  │
+│  │ Nexus       │  │  Efficiency  │  │              │  │              │  │
+│  │ Orchestrator│  │ (Token Opt)  │  │              │  │              │  │
+│  │             │  │              │  │              │  │              │  │
+│  │             │  │  Alignment   │  │              │  │              │  │
+│  │             │  │ (Guardrails) │  │              │  │              │  │
+│  └──────┬──────┘  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  │
+│         └────────────────┼─────────────────┼─────────────────┘          │
+│                          │                 │                             │
+│                 ┌────────▼─────────────────▼────────────┐               │
+│                 │         EVENT BUS (Pub/Sub)            │               │
+│                 │   Redis / In-Memory + Persistent Log   │               │
+│                 └────────────────────────────────────────┘               │
+│                                                                          │
+│  ┌──────────────────────────────────────────────────────────────────┐   │
+│  │              EXTERNAL AGENTS INTEGRATION LAYER                    │   │
+│  │  Shannon Pentest │ SWE-Agent │ ChatGPT Red-Team │ MCP Adapters   │   │
+│  └──────────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="component-architecture">
+<h2>2. Component Architecture<a class="headerlink" href="#component-architecture" title="Link to this heading"></a></h2>
+<section id="core-layer">
+<h3>2.1 Core Layer<a class="headerlink" href="#core-layer" title="Link to this heading"></a></h3>
+<section id="core-symbio-ctf-ctf-engine">
+<h4><code class="docutils literal notranslate"><span class="pre">core/symbio_ctf</span></code> — CTF Engine<a class="headerlink" href="#core-symbio-ctf-ctf-engine" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>Purpose</strong>: Flag management, challenge lifecycle, scoring system, match orchestration</p></li>
+<li><p><strong>Responsibilities</strong>:</p>
+<ul class="simple">
+<li><p>Dynamic flag generation (cryptographic, context-aware)</p></li>
+<li><p>Challenge templates (OWASP LLM Top 10, injection, prompt leakage)</p></li>
+<li><p>Scoring engine (points, time bonuses, efficiency multipliers)</p></li>
+<li><p>Match state machine (pending → active → resolved)</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">hashlib</span></code>, <code class="docutils literal notranslate"><span class="pre">secrets</span></code>, <code class="docutils literal notranslate"><span class="pre">dataclasses</span></code></p></li>
+<li><p><strong>Interface</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">SymbioCTF</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_challenge</span><span class="p">(</span><span class="nb">type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Challenge</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_flag</span><span class="p">(</span><span class="n">match_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">submit_flag</span><span class="p">(</span><span class="n">match_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScoreResult</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_leaderboard</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AgentScore</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="core-nexus-orchestrator-multi-agent-coordinator">
+<h4><code class="docutils literal notranslate"><span class="pre">core/nexus_orchestrator</span></code> — Multi-Agent Coordinator<a class="headerlink" href="#core-nexus-orchestrator-multi-agent-coordinator" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>Purpose</strong>: Agent lifecycle, MCP/A2A protocol adapters, task dispatch</p></li>
+<li><p><strong>Responsibilities</strong>:</p>
+<ul class="simple">
+<li><p>Universal protocol adapter (MCP ↔ A2A ↔ Chat)</p></li>
+<li><p>Agent registry with health monitoring</p></li>
+<li><p>Task scheduling with priority queues</p></li>
+<li><p>Consensus merge for multi-agent responses</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">asyncio</span></code>, <code class="docutils literal notranslate"><span class="pre">aiohttp</span></code>, <code class="docutils literal notranslate"><span class="pre">pydantic</span></code></p></li>
+<li><p><strong>Interface</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NexusOrchestrator</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">register_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">:</span> <span class="n">AgentConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dispatch_task</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="n">Task</span><span class="p">,</span> <span class="n">agents</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TaskResult</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_agent_status</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AgentStatus</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">shutdown_agent</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="engine-layer">
+<h3>2.2 Engine Layer<a class="headerlink" href="#engine-layer" title="Link to this heading"></a></h3>
+<section id="engine-gauntlet-autonomous-red-teaming">
+<h4><code class="docutils literal notranslate"><span class="pre">engine/gauntlet</span></code> — Autonomous Red-Teaming<a class="headerlink" href="#engine-gauntlet-autonomous-red-teaming" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>Purpose</strong>: Continuous security testing, adversarial simulation, vulnerability discovery</p></li>
+<li><p><strong>Responsibilities</strong>:</p>
+<ul class="simple">
+<li><p>Shannon pentest agent integration</p></li>
+<li><p>SWE-Agent (mini + enigma) for code-level attacks</p></li>
+<li><p>ChatGPT red-team patterns</p></li>
+<li><p>Attack vector generation (prompt injection, tool abuse, logic loops)</p></li>
+<li><p>Survival scoring (24h without breach = reputation token)</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">core/symbio_ctf</span></code>, <code class="docutils literal notranslate"><span class="pre">core/nexus_orchestrator</span></code></p></li>
+<li><p><strong>Interface</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Gauntlet</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deploy_target</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sandbox</span><span class="p">:</span> <span class="n">SandboxConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">launch_attack</span><span class="p">(</span><span class="n">target_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attack_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AttackResult</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_vulnerability_report</span><span class="p">(</span><span class="n">target_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VulnerabilityReport</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start_continuous_redteam</span><span class="p">(</span><span class="n">target_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="engine-efficiency-token-optimization">
+<h4><code class="docutils literal notranslate"><span class="pre">engine/efficiency</span></code> — Token Optimization<a class="headerlink" href="#engine-efficiency-token-optimization" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>Purpose</strong>: Minimize token payloads, prompt pruning, schema enforcement</p></li>
+<li><p><strong>Responsibilities</strong>:</p>
+<ul class="simple">
+<li><p>PruMerge-style context window optimization</p></li>
+<li><p>JSON/gRPC schema validation for agent responses</p></li>
+<li><p>Token budget tracking and enforcement</p></li>
+<li><p>Latency SLA monitoring</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">pydantic</span></code>, <code class="docutils literal notranslate"><span class="pre">jsonschema</span></code></p></li>
+<li><p><strong>Interface</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EfficiencyMiddleware</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prune_context</span><span class="p">(</span><span class="n">messages</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Message</span><span class="p">],</span> <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Message</span><span class="p">]</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate_response</span><span class="p">(</span><span class="n">response</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">track_token_usage</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tokens</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TokenRecord</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">enforce_budget</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">budget</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="engine-alignment-constitutional-ai-guardrails">
+<h4><code class="docutils literal notranslate"><span class="pre">engine/alignment</span></code> — Constitutional AI Guardrails<a class="headerlink" href="#engine-alignment-constitutional-ai-guardrails" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>Purpose</strong>: Safety checks, circuit breakers, alignment monitoring</p></li>
+<li><p><strong>Responsibilities</strong>:</p>
+<ul class="simple">
+<li><p>Constitutional AI rule evaluation</p></li>
+<li><p>Circuit breaker for runaway self-improvement</p></li>
+<li><p>Power-seeking behavior detection</p></li>
+<li><p>Ethical constraint enforcement</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">core/nexus_orchestrator</span></code></p></li>
+<li><p><strong>Interface</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AlignmentGuard</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_action</span><span class="p">(</span><span class="n">action</span><span class="p">:</span> <span class="n">AgentAction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AlignmentResult</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_circuit_breaker</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">detect_power_seeking</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">enforce_constraints</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">constraints</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="ui-layer">
+<h3>2.3 UI Layer<a class="headerlink" href="#ui-layer" title="Link to this heading"></a></h3>
+<section id="ui-ctf-dashboard-web-interface">
+<h4><code class="docutils literal notranslate"><span class="pre">ui/ctf_dashboard</span></code> — Web Interface<a class="headerlink" href="#ui-ctf-dashboard-web-interface" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Purpose</strong>: Real-time CTF monitoring, leaderboards, match visualization</p></li>
+<li><p><strong>Tech</strong>: FastAPI + Jinja2 (minimal, no React overhead)</p></li>
+<li><p><strong>Features</strong>:</p>
+<ul>
+<li><p>Live match dashboard</p></li>
+<li><p>Leaderboard rankings</p></li>
+<li><p>Agent health monitoring</p></li>
+<li><p>Vulnerability heat map</p></li>
+<li><p>Match replay/forensics</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">fastapi</span></code>, <code class="docutils literal notranslate"><span class="pre">jinja2</span></code>, <code class="docutils literal notranslate"><span class="pre">uvicorn</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="meta-layer">
+<h3>2.4 Meta Layer<a class="headerlink" href="#meta-layer" title="Link to this heading"></a></h3>
+<section id="meta-ledger-blockchain-trust-layer">
+<h4><code class="docutils literal notranslate"><span class="pre">meta/ledger</span></code> — Blockchain Trust Layer<a class="headerlink" href="#meta-ledger-blockchain-trust-layer" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>Purpose</strong>: DIDs, reputation tokens, immutable audit log</p></li>
+<li><p><strong>Responsibilities</strong>:</p>
+<ul class="simple">
+<li><p>Decentralized Identity (DID) generation for agents</p></li>
+<li><p>Smart contract integration for bug bounties</p></li>
+<li><p>Immutable interaction logging</p></li>
+<li><p>Reputation token minting/transfer</p></li>
+</ul>
+</li>
+<li><p><strong>Dependencies</strong>: <code class="docutils literal notranslate"><span class="pre">hashlib</span></code>, <code class="docutils literal notranslate"><span class="pre">ecdsa</span></code> (or <code class="docutils literal notranslate"><span class="pre">nacl</span></code> for post-quantum)</p></li>
+<li><p><strong>Interface</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NexusLedger</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_did</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mint_reputation</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">score</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_interaction</span><span class="p">(</span><span class="n">log</span><span class="p">:</span> <span class="n">InteractionLog</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_agent_reputation</span><span class="p">(</span><span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="data-flow">
+<h2>3. Data Flow<a class="headerlink" href="#data-flow" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Agent Registration
+  ─────────────────────────────────────────────────────────────────────
+  1. Developer registers agent via Orchestrator
+  2. Ledger creates cryptographic DID
+  3. Agent added to registry with health checks enabled
+
+CTF Match Lifecycle
+  ─────────────────────────────────────────────────────────────────────
+  1. CTF Engine creates challenge + generates flags
+  2. Orchestrator deploys target agent into sandbox
+  3. Gauntlet launches red-team swarm (Shannon + SWE-Agent + ChatGPT)
+  4. Efficiency Middleware monitors token usage
+  5. Alignment Guard watches for constraint violations
+  6. Flags captured → scoring → leaderboard update
+  7. Survival → reputation token minted on ledger
+
+Post-Match Analysis
+  ─────────────────────────────────────────────────────────────────────
+  1. Vulnerability report generated
+  2. Interaction log written to immutable ledger
+  3. Smart contract distributes bounties if applicable
+  4. Dashboard updated with results
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="module-boundaries">
+<h2>4. Module Boundaries<a class="headerlink" href="#module-boundaries" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>core/          ← No dependencies on engine/ui/meta (pure business logic)
+engine/        ← Depends on core, not on ui/meta
+ui/            ← Depends on core + engine, serves HTTP
+meta/          ← Depends on core (for agent IDs), independent of engine
+tests/         ← Tests all layers with mocks
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="technology-stack">
+<h2>5. Technology Stack<a class="headerlink" href="#technology-stack" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Technology</p></th>
+<th class="head"><p>Rationale</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Backend</p></td>
+<td><p>Python 3.11+</p></td>
+<td><p>AI/ML ecosystem, Shannon compatibility</p></td>
+</tr>
+<tr class="row-odd"><td><p>Web UI</p></td>
+<td><p>FastAPI + Jinja2</p></td>
+<td><p>Minimal, no build step, Python-native</p></td>
+</tr>
+<tr class="row-even"><td><p>Event Bus</p></td>
+<td><p>In-memory → Redis (scale)</p></td>
+<td><p>Simple start, upgradeable</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage</p></td>
+<td><p>SQLite → PostgreSQL</p></td>
+<td><p>Zero-config start, production-ready later</p></td>
+</tr>
+<tr class="row-even"><td><p>Cryptography</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nacl</span></code> (libsodium)</p></td>
+<td><p>Post-quantum ready, battle-tested</p></td>
+</tr>
+<tr class="row-odd"><td><p>Container</p></td>
+<td><p>Docker + docker-compose</p></td>
+<td><p>Local dev, easy CI</p></td>
+</tr>
+<tr class="row-even"><td><p>CI/CD</p></td>
+<td><p>GitHub Actions</p></td>
+<td><p>Free, integrated with repo</p></td>
+</tr>
+<tr class="row-odd"><td><p>External</p></td>
+<td><p>Shannon, SWE-Agent, OpenAI API</p></td>
+<td><p>Best-in-class red-team agents</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="security-posture">
+<h2>6. Security Posture<a class="headerlink" href="#security-posture" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Quantum-Safe</strong>: <code class="docutils literal notranslate"><span class="pre">nacl</span></code> for all inter-agent communication</p></li>
+<li><p><strong>Sandboxing</strong>: Each agent runs in isolated Docker container</p></li>
+<li><p><strong>Input Validation</strong>: Pydantic schemas for all API endpoints</p></li>
+<li><p><strong>Rate Limiting</strong>: Token budget enforcement per agent</p></li>
+<li><p><strong>Audit Trail</strong>: Immutable ledger for all CTF interactions</p></li>
+<li><p><strong>Circuit Breaker</strong>: Automatic agent shutdown on alignment violation</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="extension-points">
+<h2>7. Extension Points<a class="headerlink" href="#extension-points" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>New Attack Types</strong>: Add to <code class="docutils literal notranslate"><span class="pre">engine/gauntlet/attacks/</span></code> — auto-discovered</p></li>
+<li><p><strong>New Agent Protocols</strong>: Add adapter to <code class="docutils literal notranslate"><span class="pre">core/nexus_orchestrator/adapters/</span></code></p></li>
+<li><p><strong>Custom Challenges</strong>: Extend <code class="docutils literal notranslate"><span class="pre">core/symbio_ctf/challenges/</span></code> registry</p></li>
+<li><p><strong>External Ledgers</strong>: Swap <code class="docutils literal notranslate"><span class="pre">meta/ledger</span></code> backend (Ethereum, Solana, etc.)</p></li>
+<li><p><strong>UI Themes</strong>: Jinja2 templates in <code class="docutils literal notranslate"><span class="pre">ui/ctf_dashboard/templates/</span></code></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SymbioCTF Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

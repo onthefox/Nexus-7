@@ -1,34 +1,38 @@
-# Python
+```gitignore
+# Python compiled files
+*.pyc
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
-.pytest_cache/
-.coverage
-htmlcov/
-.mypy_cache/
-.ruff_cache/
-.venv/
-venv/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# Audit logs
+audit-*/audit-log.json
 
-# Docker
-*.log
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment
+# Environment files
 .env
 .env.local
-.env.*.local
+*.env.*
+
+# Dependencies
+.venv/
+venv/
+node_modules/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Editors
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+```

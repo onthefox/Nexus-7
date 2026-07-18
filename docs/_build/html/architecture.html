@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SymbioCTF Architecture &mdash; SymbioCTF 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="nexus_orchestrator package" href="api/nexus_orchestrator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SymbioCTF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-steps">Installation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#docker-installation">Docker Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#creating-a-ctf-match">Creating a CTF Match</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#working-with-agents">Working with Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#using-nexus-orchestrator">Using Nexus Orchestrator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-examples">Running Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-nexus_orchestrator.models">nexus_orchestrator.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input"><code class="docutils literal notranslate"><span class="pre">sanitize_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name"><code class="docutils literal notranslate"><span class="pre">validate_agent_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.AgentState"><code class="docutils literal notranslate"><span class="pre">AgentState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority"><code class="docutils literal notranslate"><span class="pre">TaskPriority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-nexus_orchestrator.orchestrator">nexus_orchestrator.orchestrator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.OrchestratorError"><code class="docutils literal notranslate"><span class="pre">OrchestratorError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.AgentNotFoundError"><code class="docutils literal notranslate"><span class="pre">AgentNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.TaskDispatchError"><code class="docutils literal notranslate"><span class="pre">TaskDispatchError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-nexus_orchestrator">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SymbioCTF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SymbioCTF Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/architecture.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="symbioctf-architecture">
+<h1>SymbioCTF Architecture<a class="headerlink" href="#symbioctf-architecture" title="Link to this heading"></a></h1>
+<p><strong>SPARC Design Phase</strong> — System Architecture for the CTF-OS Ecosystem
+Autonomous Proving Grounds for AI Agents</p>
+<p>—</p>
+<p>## 1. System Overview</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">┌─────────────────────────────────────────────────────────────────────────┐</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">NEXUS-7</span> <span class="pre">CTF-OS</span> <span class="pre">ECOSYSTEM</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">┌─────────────┐</span>&#160; <span class="pre">┌──────────────┐</span>&#160; <span class="pre">┌──────────────┐</span>&#160; <span class="pre">┌──────────────┐</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160; <span class="pre">CORE</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160; <span class="pre">ENGINE</span>&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160; <span class="pre">UI</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160; <span class="pre">META</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span> <span class="pre">SymbioCTF</span>&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">Gauntlet</span>&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">CTF</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">Ledger</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span> <span class="pre">(CTF</span> <span class="pre">Engine)│</span>&#160; <span class="pre">│</span> <span class="pre">(Red-Team)</span>&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">Dashboard</span>&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span> <span class="pre">(Blockchain)</span> <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">(Web)</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">(DIDs)</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span> <span class="pre">Nexus</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">Efficiency</span>&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span> <span class="pre">Orchestrator│</span>&#160; <span class="pre">│</span> <span class="pre">(Token</span> <span class="pre">Opt)</span>&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">Alignment</span>&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span> <span class="pre">(Guardrails)</span> <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">└──────┬──────┘</span>&#160; <span class="pre">└──────┬───────┘</span>&#160; <span class="pre">└──────┬───────┘</span>&#160; <span class="pre">└──────┬───────┘</span>&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">└────────────────┼─────────────────┼─────────────────┘</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">┌────────▼─────────────────▼────────────┐</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">EVENT</span> <span class="pre">BUS</span> <span class="pre">(Pub/Sub)</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160;&#160; <span class="pre">Redis</span> <span class="pre">/</span> <span class="pre">In-Memory</span> <span class="pre">+</span> <span class="pre">Persistent</span> <span class="pre">Log</span>&#160;&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">└────────────────────────────────────────┘</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">┌──────────────────────────────────────────────────────────────────┐</span>&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">EXTERNAL</span> <span class="pre">AGENTS</span> <span class="pre">INTEGRATION</span> <span class="pre">LAYER</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">│</span>&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">│</span>&#160; <span class="pre">Shannon</span> <span class="pre">Pentest</span> <span class="pre">│</span> <span class="pre">SWE-Agent</span> <span class="pre">│</span> <span class="pre">ChatGPT</span> <span class="pre">Red-Team</span> <span class="pre">│</span> <span class="pre">MCP</span> <span class="pre">Adapters</span>&#160;&#160; <span class="pre">│</span>&#160;&#160; <span class="pre">│</span>
+<span class="pre">│</span>&#160; <span class="pre">└──────────────────────────────────────────────────────────────────┘</span>&#160;&#160; <span class="pre">│</span>
+<span class="pre">└─────────────────────────────────────────────────────────────────────────┘</span>
+<span class="pre">`</span></code></p>
+<p>—</p>
+<p>## 2. Component Architecture</p>
+<p>### 2.1 Core Layer</p>
+<p>#### <cite>core/symbio_ctf</cite> — CTF Engine
+- <strong>Purpose</strong>: Flag management, challenge lifecycle, scoring system, match orchestration
+- <strong>Responsibilities</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Dynamic flag generation (cryptographic, context-aware)</p></li>
+<li><p>Challenge templates (OWASP LLM Top 10, injection, prompt leakage)</p></li>
+<li><p>Scoring engine (points, time bonuses, efficiency multipliers)</p></li>
+<li><p>Match state machine (pending → active → resolved)</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><strong>Dependencies</strong>: <cite>hashlib</cite>, <cite>secrets</cite>, <cite>dataclasses</cite></p></li>
+<li><p><strong>Interface</strong>:
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+class SymbioCTF:</p>
+<blockquote>
+<div><p>def create_challenge(type: str, difficulty: int) -&gt; Challenge
+def generate_flag(match_id: str) -&gt; str
+def submit_flag(match_id: str, flag: str, agent_id: str) -&gt; ScoreResult
+def get_leaderboard() -&gt; list[AgentScore]</p>
+</div></blockquote>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+</li>
+</ul>
+<p>#### <cite>core/nexus_orchestrator</cite> — Multi-Agent Coordinator
+- <strong>Purpose</strong>: Agent lifecycle, MCP/A2A protocol adapters, task dispatch
+- <strong>Responsibilities</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Universal protocol adapter (MCP ↔ A2A ↔ Chat)</p></li>
+<li><p>Agent registry with health monitoring</p></li>
+<li><p>Task scheduling with priority queues</p></li>
+<li><p>Consensus merge for multi-agent responses</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><strong>Dependencies</strong>: <cite>asyncio</cite>, <cite>aiohttp</cite>, <cite>pydantic</cite></p></li>
+<li><p><strong>Interface</strong>:
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>python
+class NexusOrchestrator:</p>
+<blockquote>
+<div><p>def register_agent(agent: AgentConfig) -&gt; str
+def dispatch_task(task: Task, agents: list[str]) -&gt; TaskResult
+def get_agent_status(agent_id: str) -&gt; AgentStatus
+def shutdown_agent(agent_id: str) -&gt; bool</p>
+</div></blockquote>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
+</li>
+</ul>
+<p>### 2.2 Engine Layer</p>
+<p>#### <cite>engine/gauntlet</cite> — Autonomous Red-Teaming
+- <strong>Purpose</strong>: Continuous security testing, adversarial simulation, vulnerability discovery
+- <strong>Responsibilities</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Shannon pentest agent integration</p></li>
+<li><p>SWE-Agent (mini + enigma) for code-level attacks</p></li>
+<li><p>ChatGPT red-team patterns</p></li>
+<li><p>Attack vector generation (prompt injection, tool abuse, logic loops)</p></li>
+<li><p>Survival scoring (24h without breach = reputation token)</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><strong>Dependencies</strong>: <cite>core/symbio_ctf</cite>, <cite>core/nexus_orchestrator</cite></p></li>
+<li><p><strong>Interface</strong>:
+<a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a>python
+class Gauntlet:</p>
+<blockquote>
+<div><p>def deploy_target(agent_id: str, sandbox: SandboxConfig) -&gt; str
+def launch_attack(target_id: str, attack_type: str) -&gt; AttackResult
+def get_vulnerability_report(target_id: str) -&gt; VulnerabilityReport
+def start_continuous_redteam(target_id: str, duration: int) -&gt; str</p>
+</div></blockquote>
+<p><a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+</li>
+</ul>
+<p>#### <cite>engine/efficiency</cite> — Token Optimization
+- <strong>Purpose</strong>: Minimize token payloads, prompt pruning, schema enforcement
+- <strong>Responsibilities</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>PruMerge-style context window optimization</p></li>
+<li><p>JSON/gRPC schema validation for agent responses</p></li>
+<li><p>Token budget tracking and enforcement</p></li>
+<li><p>Latency SLA monitoring</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><strong>Dependencies</strong>: <cite>pydantic</cite>, <cite>jsonschema</cite></p></li>
+<li><p><strong>Interface</strong>:
+<a href="#id25"><span class="problematic" id="id26">``</span></a><a href="#id27"><span class="problematic" id="id28">`</span></a>python
+class EfficiencyMiddleware:</p>
+<blockquote>
+<div><p>def prune_context(messages: list[Message], max_tokens: int) -&gt; list[Message]
+def validate_response(response: dict, schema: dict) -&gt; bool
+def track_token_usage(agent_id: str, tokens: int) -&gt; TokenRecord
+def enforce_budget(agent_id: str, budget: int) -&gt; bool</p>
+</div></blockquote>
+<p><a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">`</span></a></p>
+</li>
+</ul>
+<p>#### <cite>engine/alignment</cite> — Constitutional AI Guardrails
+- <strong>Purpose</strong>: Safety checks, circuit breakers, alignment monitoring
+- <strong>Responsibilities</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Constitutional AI rule evaluation</p></li>
+<li><p>Circuit breaker for runaway self-improvement</p></li>
+<li><p>Power-seeking behavior detection</p></li>
+<li><p>Ethical constraint enforcement</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><strong>Dependencies</strong>: <cite>core/nexus_orchestrator</cite></p></li>
+<li><p><strong>Interface</strong>:
+<a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id35"><span class="problematic" id="id36">`</span></a>python
+class AlignmentGuard:</p>
+<blockquote>
+<div><p>def evaluate_action(action: AgentAction) -&gt; AlignmentResult
+def check_circuit_breaker(agent_id: str) -&gt; bool
+def detect_power_seeking(agent_id: str) -&gt; bool
+def enforce_constraints(agent_id: str, constraints: list[str]) -&gt; bool</p>
+</div></blockquote>
+<p><a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">`</span></a></p>
+</li>
+</ul>
+<p>### 2.3 UI Layer</p>
+<p>#### <cite>ui/ctf_dashboard</cite> — Web Interface
+- <strong>Purpose</strong>: Real-time CTF monitoring, leaderboards, match visualization
+- <strong>Tech</strong>: FastAPI + Jinja2 (minimal, no React overhead)
+- <strong>Features</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Live match dashboard</p></li>
+<li><p>Leaderboard rankings</p></li>
+<li><p>Agent health monitoring</p></li>
+<li><p>Vulnerability heat map</p></li>
+<li><p>Match replay/forensics</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Dependencies</strong>: <cite>fastapi</cite>, <cite>jinja2</cite>, <cite>uvicorn</cite></p></li>
+</ul>
+<p>### 2.4 Meta Layer</p>
+<p>#### <cite>meta/ledger</cite> — Blockchain Trust Layer
+- <strong>Purpose</strong>: DIDs, reputation tokens, immutable audit log
+- <strong>Responsibilities</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Decentralized Identity (DID) generation for agents</p></li>
+<li><p>Smart contract integration for bug bounties</p></li>
+<li><p>Immutable interaction logging</p></li>
+<li><p>Reputation token minting/transfer</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><strong>Dependencies</strong>: <cite>hashlib</cite>, <cite>ecdsa</cite> (or <cite>nacl</cite> for post-quantum)</p></li>
+<li><p><strong>Interface</strong>:
+<a href="#id41"><span class="problematic" id="id42">``</span></a><a href="#id43"><span class="problematic" id="id44">`</span></a>python
+class NexusLedger:</p>
+<blockquote>
+<div><p>def create_did(agent_id: str) -&gt; str
+def mint_reputation(agent_id: str, score: int) -&gt; str
+def log_interaction(log: InteractionLog) -&gt; str
+def get_agent_reputation(agent_id: str) -&gt; int</p>
+</div></blockquote>
+<p><a href="#id45"><span class="problematic" id="id46">``</span></a><a href="#id47"><span class="problematic" id="id48">`</span></a></p>
+</li>
+</ul>
+<p>—</p>
+<p>## 3. Data Flow</p>
+<p><a href="#id49"><span class="problematic" id="id50">``</span></a>`
+Agent Registration</p>
+<blockquote>
+<div><p>─────────────────────────────────────────────────────────────────────
+1. Developer registers agent via Orchestrator
+2. Ledger creates cryptographic DID
+3. Agent added to registry with health checks enabled</p>
+</div></blockquote>
+<dl class="simple">
+<dt>CTF Match Lifecycle</dt><dd><p>─────────────────────────────────────────────────────────────────────
+1. CTF Engine creates challenge + generates flags
+2. Orchestrator deploys target agent into sandbox
+3. Gauntlet launches red-team swarm (Shannon + SWE-Agent + ChatGPT)
+4. Efficiency Middleware monitors token usage
+5. Alignment Guard watches for constraint violations
+6. Flags captured → scoring → leaderboard update
+7. Survival → reputation token minted on ledger</p>
+</dd>
+<dt>Post-Match Analysis</dt><dd><p>─────────────────────────────────────────────────────────────────────
+1. Vulnerability report generated
+2. Interaction log written to immutable ledger
+3. Smart contract distributes bounties if applicable
+4. Dashboard updated with results</p>
+</dd>
+</dl>
+<p><a href="#id51"><span class="problematic" id="id52">``</span></a><a href="#id53"><span class="problematic" id="id54">`</span></a></p>
+<p>—</p>
+<p>## 4. Module Boundaries</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">core/</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">←</span> <span class="pre">No</span> <span class="pre">dependencies</span> <span class="pre">on</span> <span class="pre">engine/ui/meta</span> <span class="pre">(pure</span> <span class="pre">business</span> <span class="pre">logic)</span>
+<span class="pre">engine/</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">←</span> <span class="pre">Depends</span> <span class="pre">on</span> <span class="pre">core,</span> <span class="pre">not</span> <span class="pre">on</span> <span class="pre">ui/meta</span>
+<span class="pre">ui/</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">←</span> <span class="pre">Depends</span> <span class="pre">on</span> <span class="pre">core</span> <span class="pre">+</span> <span class="pre">engine,</span> <span class="pre">serves</span> <span class="pre">HTTP</span>
+<span class="pre">meta/</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">←</span> <span class="pre">Depends</span> <span class="pre">on</span> <span class="pre">core</span> <span class="pre">(for</span> <span class="pre">agent</span> <span class="pre">IDs),</span> <span class="pre">independent</span> <span class="pre">of</span> <span class="pre">engine</span>
+<span class="pre">tests/</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">←</span> <span class="pre">Tests</span> <span class="pre">all</span> <span class="pre">layers</span> <span class="pre">with</span> <span class="pre">mocks</span>
+<span class="pre">`</span></code></p>
+<p>—</p>
+<p>## 5. Technology Stack</p>
+<div class="line-block">
+<div class="line">Layer | Technology | Rationale |</div>
+</div>
+<p><a href="#id55"><span class="problematic" id="id56">|-------|</span></a>———–<a href="#id57"><span class="problematic" id="id58">|-----------|</span></a>
+| Backend | Python 3.11+ | AI/ML ecosystem, Shannon compatibility |
+| Web UI | FastAPI + Jinja2 | Minimal, no build step, Python-native |
+| Event Bus | In-memory → Redis (scale) | Simple start, upgradeable |
+| Storage | SQLite → PostgreSQL | Zero-config start, production-ready later |
+| Cryptography | <cite>nacl</cite> (libsodium) | Post-quantum ready, battle-tested |
+| Container | Docker + docker-compose | Local dev, easy CI |
+| CI/CD | GitHub Actions | Free, integrated with repo |
+| External | Shannon, SWE-Agent, OpenAI API | Best-in-class red-team agents |</p>
+<p>—</p>
+<p>## 6. Security Posture</p>
+<ul class="simple">
+<li><p><strong>Quantum-Safe</strong>: <cite>nacl</cite> for all inter-agent communication</p></li>
+<li><p><strong>Sandboxing</strong>: Each agent runs in isolated Docker container</p></li>
+<li><p><strong>Input Validation</strong>: Pydantic schemas for all API endpoints</p></li>
+<li><p><strong>Rate Limiting</strong>: Token budget enforcement per agent</p></li>
+<li><p><strong>Audit Trail</strong>: Immutable ledger for all CTF interactions</p></li>
+<li><p><strong>Circuit Breaker</strong>: Automatic agent shutdown on alignment violation</p></li>
+</ul>
+<p>—</p>
+<p>## 7. Extension Points</p>
+<ol class="arabic simple">
+<li><p><strong>New Attack Types</strong>: Add to <cite>engine/gauntlet/attacks/</cite> — auto-discovered</p></li>
+<li><p><strong>New Agent Protocols</strong>: Add adapter to <cite>core/nexus_orchestrator/adapters/</cite></p></li>
+<li><p><strong>Custom Challenges</strong>: Extend <cite>core/symbio_ctf/challenges/</cite> registry</p></li>
+<li><p><strong>External Ledgers</strong>: Swap <cite>meta/ledger</cite> backend (Ethereum, Solana, etc.)</p></li>
+<li><p><strong>UI Themes</strong>: Jinja2 templates in <cite>ui/ctf_dashboard/templates/</cite></p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/nexus_orchestrator.html" class="btn btn-neutral float-left" title="nexus_orchestrator package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SymbioCTF Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
