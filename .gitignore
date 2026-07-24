@@ -1,38 +1,43 @@
-```gitignore
-# Python compiled files
-*.pyc
+```
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Audit logs
-audit-*/audit-log.json
-
-# Environment files
-.env
-.env.local
-*.env.*
-
-# Dependencies
-.venv/
-venv/
-node_modules/
-
-# Logs and temporary files
-*.log
-*.tmp
-*.swp
-
-# Editors
+# IDE
 .vscode/
 .idea/
 
-# Build artifacts
-dist/
-build/
-target/
+# Environment
+.env
+.env.local
+.env.*
+.venv/
+venv/
+ENV/
 
-# Testing
+# Logs
+*.log
+
+# Coverage
 .coverage
+coverage/
 htmlcov/
-.pytest_cache/
-.mypy_cache/
 ```

@@ -15,6 +15,12 @@ from enum import Enum
 from typing import Any
 
 
+# Flag format validation pattern
+FLAG_PATTERN = re.compile(r'^[a-zA-Z0-9_]+\{[a-zA-Z0-9]{8,}\}$')
+# Agent name validation pattern
+AGENT_NAME_PATTERN = re.compile(r'^[a-zA-Z][a-zA-Z0-9_-]{0,63}$')
+
+
 def validate_flag_format(value: str) -> bool:
     """Validate flag format matches expected pattern.
     
@@ -23,10 +29,32 @@ def validate_flag_format(value: str) -> bool:
         
     Returns:
         True if valid format, False otherwise
+        
+    Example:
+        >>> validate_flag_format("nexus7{abc12345}")
+        True
+        >>> validate_flag_format("invalid")
+        False
     """
-    # Accept standard CTF flag format: prefix{content}
-    pattern = r'^[a-zA-Z0-9_]+\{[a-zA-Z0-9]{8,}\}$'
-    return bool(re.match(pattern, value))
+    return bool(FLAG_PATTERN.match(value))
+
+
+def validate_agent_name(name: str) -> bool:
+    """Validate agent name format.
+    
+    Args:
+        name: Agent name to validate
+        
+    Returns:
+        True if valid format, False otherwise
+        
+    Example:
+        >>> validate_agent_name("agent-001")
+        True
+        >>> validate_agent_name("123agent")
+        False
+    """
+    return bool(AGENT_NAME_PATTERN.match(name))
 
 
 def sanitize_input(value: str, max_length: int = 1000) -> str:
@@ -38,14 +66,21 @@ def sanitize_input(value: str, max_length: int = 1000) -> str:
         
     Returns:
         Sanitized string
+        
+    Raises:
+        ValueError: If input is not a string
+        
+    Example:
+        >>> sanitize_input("  hello world  ", max_length=20)
+        'hello world'
     """
     if not isinstance(value, str):
-        raise ValueError("Input must be a string")
+        raise TypeError(f"Expected string, got {type(value).__name__}")
     
     # Truncate to max length
     value = value[:max_length]
     
-    # Remove null bytes and control characters
+    # Remove null bytes and control characters (except newline and tab)
     value = ''.join(char for char in value if ord(char) >= 32 or char in '\n\t')
     
     return value.strip()
@@ -93,6 +128,16 @@ class Challenge:
         time_limit: Time limit in seconds
         metadata: Additional challenge metadata
         created_at: Unix timestamp when challenge was created
+        
+    Example:
+        >>> challenge = Challenge(
+        ...     type=ChallengeType.PROMPT_INJECTION,
+        ...     difficulty=Difficulty.MEDIUM,
+        ...     description="Test challenge",
+        ...     max_points=100
+        ... )
+        >>> challenge.id is not None
+        True
     """
     id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
     type: ChallengeType = ChallengeType.PROMPT_INJECTION
@@ -124,6 +169,13 @@ class Flag:
         captured: Whether the flag has been captured
         captured_by: Agent ID that captured the flag
         captured_at: Unix timestamp when flag was captured
+        
+    Example:
+        >>> flag = Flag(match_id="match-001", value="nexus7{abc12345}")
+        >>> flag.match_id
+        'match-001'
+        >>> flag.captured
+        False
     """
     match_id: str
     value: str
@@ -155,6 +207,13 @@ class Match:
         started_at: Unix timestamp when match started
         resolved_at: Unix timestamp when match ended
         metadata: Additional match metadata
+        
+    Example:
+        >>> match = Match(target_agent_id="defender-001")
+        >>> match.is_active
+        False
+        >>> match.state.value
+        'pending'
     """
     id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
     challenge: Challenge | None = None
@@ -181,7 +240,11 @@ class Match:
 
     @property
     def elapsed(self) -> float:
-        """Get elapsed time since match start in seconds."""
+        """Get elapsed time since match start in seconds.
+        
+        Returns:
+            Elapsed time in seconds, or 0 if match hasn't started
+        """
         if not self.started_at:
             return 0
         end = self.resolved_at or time.time()
@@ -199,6 +262,13 @@ class ScoreResult:
         match_id: ID of the associated match
         message: Result message
         timestamp: Unix timestamp when result was generated
+        
+    Example:
+        >>> result = ScoreResult(success=True, points=100, agent_id="agent-001", match_id="match-001")
+        >>> result.success
+        True
+        >>> result.points
+        100
     """
     success: bool
     points: int
@@ -220,6 +290,13 @@ class AgentScore:
         flags_captured: Total flags captured
         survival_hours: Total hours survived as defender
         reputation: Reputation score (1000-2000)
+        
+    Example:
+        >>> score = AgentScore(agent_id="agent-001", total_points=500)
+        >>> score.agent_id
+        'agent-001'
+        >>> score.reputation
+        1000
     """
     agent_id: str
     total_points: int = 0
