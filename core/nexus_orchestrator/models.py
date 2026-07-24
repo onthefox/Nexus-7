@@ -15,6 +15,10 @@ from enum import Enum
 from typing import Any
 
 
+# Agent name validation pattern
+AGENT_NAME_PATTERN = re.compile(r'^[a-zA-Z][a-zA-Z0-9_-]{0,63}$')
+
+
 def sanitize_input(value: str, max_length: int = 1000) -> str:
     """Sanitize string input by removing potentially dangerous characters.
     
@@ -24,14 +28,21 @@ def sanitize_input(value: str, max_length: int = 1000) -> str:
         
     Returns:
         Sanitized string
+        
+    Raises:
+        TypeError: If input is not a string
+        
+    Example:
+        >>> sanitize_input("  hello world  ", max_length=20)
+        'hello world'
     """
     if not isinstance(value, str):
-        raise ValueError("Input must be a string")
+        raise TypeError(f"Expected string, got {type(value).__name__}")
     
     # Truncate to max length
     value = value[:max_length]
     
-    # Remove null bytes and control characters
+    # Remove null bytes and control characters (except newline and tab)
     value = ''.join(char for char in value if ord(char) >= 32 or char in '\n\t')
     
     return value.strip()
@@ -45,9 +56,14 @@ def validate_agent_name(name: str) -> bool:
         
     Returns:
         True if valid format, False otherwise
+        
+    Example:
+        >>> validate_agent_name("agent-001")
+        True
+        >>> validate_agent_name("123agent")
+        False
     """
-    pattern = r'^[a-zA-Z][a-zA-Z0-9_-]{0,63}$'
-    return bool(re.match(pattern, name))
+    return bool(AGENT_NAME_PATTERN.match(name))
 
 
 class ProtocolType(str, Enum):
@@ -87,6 +103,13 @@ class AgentConfig:
         max_tokens: Maximum token budget for the agent
         timeout: Request timeout in seconds
         metadata: Additional configuration metadata
+        
+    Example:
+        >>> config = AgentConfig(name="test-agent", protocol=ProtocolType.MCP)
+        >>> config.name
+        'test-agent'
+        >>> config.max_tokens
+        4096
     """
     name: str
     protocol: ProtocolType = ProtocolType.MCP
@@ -128,6 +151,15 @@ class AgentStatus:
         tasks_failed: Number of failed tasks
         last_seen: Unix timestamp of last activity
         token_usage: Total tokens consumed by this agent
+        
+    Example:
+        >>> from .models import AgentConfig, ProtocolType
+        >>> config = AgentConfig(name="test-agent")
+        >>> status = AgentStatus(agent_id="agent-001", config=config)
+        >>> status.health
+        1.0
+        >>> status.state.value
+        'registered'
     """
     agent_id: str
     config: AgentConfig
@@ -152,6 +184,13 @@ class Task:
         timeout: Task timeout in seconds
         created_at: Unix timestamp when task was created
         metadata: Additional task metadata
+        
+    Example:
+        >>> task = Task(description="Test task", priority=TaskPriority.HIGH)
+        >>> task.id is not None
+        True
+        >>> task.priority.value
+        2
     """
     id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
     description: str = ""
@@ -176,6 +215,13 @@ class TaskResult:
         tokens_used: Number of tokens consumed during execution
         duration: Execution duration in seconds
         timestamp: Unix timestamp when result was generated
+        
+    Example:
+        >>> result = TaskResult(task_id="task-001", agent_id="agent-001", success=True)
+        >>> result.success
+        True
+        >>> result.tokens_used
+        0
     """
     task_id: str
     agent_id: str
