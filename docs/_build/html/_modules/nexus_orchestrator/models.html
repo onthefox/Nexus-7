@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nexus_orchestrator.models &mdash; SymbioCTF 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SymbioCTF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#module-nexus_orchestrator.models">nexus_orchestrator.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input"><code class="docutils literal notranslate"><span class="pre">sanitize_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name"><code class="docutils literal notranslate"><span class="pre">validate_agent_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentState"><code class="docutils literal notranslate"><span class="pre">AgentState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority"><code class="docutils literal notranslate"><span class="pre">TaskPriority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#module-nexus_orchestrator.orchestrator">nexus_orchestrator.orchestrator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.OrchestratorError"><code class="docutils literal notranslate"><span class="pre">OrchestratorError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.AgentNotFoundError"><code class="docutils literal notranslate"><span class="pre">AgentNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.TaskDispatchError"><code class="docutils literal notranslate"><span class="pre">TaskDispatchError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#module-nexus_orchestrator">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymbioCTF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nexus_orchestrator.models</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nexus_orchestrator.models</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Data models for the Nexus Orchestrator</span>
+
+<span class="sd">This module defines the core data structures used throughout the Nexus Orchestrator,</span>
+<span class="sd">including agent configurations, task definitions, and execution results.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+
+<div class="viewcode-block" id="sanitize_input">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">sanitize_input</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sanitize string input by removing potentially dangerous characters.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        value: Input string to sanitize</span>
+<span class="sd">        max_length: Maximum allowed length</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Sanitized string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must be a string&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Truncate to max length</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[:</span><span class="n">max_length</span><span class="p">]</span>
+    
+    <span class="c1"># Remove null bytes and control characters</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">value</span> <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">32</span> <span class="ow">or</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;</span><span class="se">\n\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="validate_agent_name">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_agent_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate agent name format.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        name: Agent name to validate</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        True if valid format, False otherwise</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z][a-zA-Z0-9_-]{0,63}$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="ProtocolType">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProtocolType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Supported communication protocols for agent interaction.&quot;&quot;&quot;</span>
+    <span class="n">MCP</span> <span class="o">=</span> <span class="s2">&quot;mcp&quot;</span>  <span class="c1"># Model Context Protocol</span>
+    <span class="n">A2A</span> <span class="o">=</span> <span class="s2">&quot;a2a&quot;</span>  <span class="c1"># Agent-to-Agent</span>
+    <span class="n">CHAT</span> <span class="o">=</span> <span class="s2">&quot;chat&quot;</span>  <span class="c1"># Human-to-Agent chat</span></div>
+
+
+
+<div class="viewcode-block" id="AgentState">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentState">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Possible runtime states for an agent.&quot;&quot;&quot;</span>
+    <span class="n">REGISTERED</span> <span class="o">=</span> <span class="s2">&quot;registered&quot;</span>
+    <span class="n">IDLE</span> <span class="o">=</span> <span class="s2">&quot;idle&quot;</span>
+    <span class="n">RUNNING</span> <span class="o">=</span> <span class="s2">&quot;running&quot;</span>
+    <span class="n">PAUSED</span> <span class="o">=</span> <span class="s2">&quot;paused&quot;</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span>
+    <span class="n">TERMINATED</span> <span class="o">=</span> <span class="s2">&quot;terminated&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="TaskPriority">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TaskPriority</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Task priority levels for scheduling.&quot;&quot;&quot;</span>
+    <span class="n">LOW</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">NORMAL</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">HIGH</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">CRITICAL</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+
+<div class="viewcode-block" id="AgentConfig">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentConfig</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for registering an agent.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        name: Human-readable name for the agent</span>
+<span class="sd">        protocol: Communication protocol to use (default: MCP)</span>
+<span class="sd">        endpoint: Network endpoint for the agent</span>
+<span class="sd">        capabilities: List of capability identifiers</span>
+<span class="sd">        max_tokens: Maximum token budget for the agent</span>
+<span class="sd">        timeout: Request timeout in seconds</span>
+<span class="sd">        metadata: Additional configuration metadata</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">protocol</span><span class="p">:</span> <span class="n">ProtocolType</span> <span class="o">=</span> <span class="n">ProtocolType</span><span class="o">.</span><span class="n">MCP</span>
+    <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">capabilities</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">120</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AgentConfig.__post_init__">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.__post_init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate agent configuration after initialization.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">validate_agent_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Invalid agent name &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+                <span class="s2">&quot;Must start with letter and contain only alphanumeric, underscore, or hyphen.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;endpoint must be a string&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_tokens</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_tokens</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;max_tokens must be a positive integer&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;timeout must be a positive integer&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Sanitize strings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">sanitize_input</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="n">sanitize_input</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AgentStatus">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentStatus</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Runtime status of a registered agent.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        agent_id: Unique identifier for the agent</span>
+<span class="sd">        config: Agent configuration</span>
+<span class="sd">        state: Current runtime state</span>
+<span class="sd">        health: Health score from 0.0 to 1.0</span>
+<span class="sd">        tasks_completed: Number of successfully completed tasks</span>
+<span class="sd">        tasks_failed: Number of failed tasks</span>
+<span class="sd">        last_seen: Unix timestamp of last activity</span>
+<span class="sd">        token_usage: Total tokens consumed by this agent</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">AgentConfig</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span> <span class="o">=</span> <span class="n">AgentState</span><span class="o">.</span><span class="n">REGISTERED</span>
+    <span class="n">health</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 0.0 - 1.0</span>
+    <span class="n">tasks_completed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tasks_failed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">last_seen</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">token_usage</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="Task">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.Task">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Task</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A task to be dispatched to agents.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        id: Unique task identifier</span>
+<span class="sd">        description: Human-readable task description</span>
+<span class="sd">        payload: Task-specific data payload</span>
+<span class="sd">        priority: Task priority level</span>
+<span class="sd">        assigned_agents: List of agent IDs assigned to this task</span>
+<span class="sd">        timeout: Task timeout in seconds</span>
+<span class="sd">        created_at: Unix timestamp when task was created</span>
+<span class="sd">        metadata: Additional task metadata</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())[:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">priority</span><span class="p">:</span> <span class="n">TaskPriority</span> <span class="o">=</span> <span class="n">TaskPriority</span><span class="o">.</span><span class="n">NORMAL</span>
+    <span class="n">assigned_agents</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">120</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TaskResult">
+<a class="viewcode-back" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.TaskResult">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TaskResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Result from task execution.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        task_id: ID of the executed task</span>
+<span class="sd">        agent_id: ID of the agent that executed the task</span>
+<span class="sd">        success: Whether execution was successful</span>
+<span class="sd">        output: Result output data</span>
+<span class="sd">        error: Error message if execution failed</span>
+<span class="sd">        tokens_used: Number of tokens consumed during execution</span>
+<span class="sd">        duration: Execution duration in seconds</span>
+<span class="sd">        timestamp: Unix timestamp when result was generated</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">error</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">tokens_used</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SymbioCTF Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

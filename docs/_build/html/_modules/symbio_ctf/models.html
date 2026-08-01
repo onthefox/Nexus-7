@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>symbio_ctf.models &mdash; SymbioCTF 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SymbioCTF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#module-nexus_orchestrator.models">nexus_orchestrator.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input"><code class="docutils literal notranslate"><span class="pre">sanitize_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name"><code class="docutils literal notranslate"><span class="pre">validate_agent_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentState"><code class="docutils literal notranslate"><span class="pre">AgentState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority"><code class="docutils literal notranslate"><span class="pre">TaskPriority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.models.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#module-nexus_orchestrator.orchestrator">nexus_orchestrator.orchestrator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.OrchestratorError"><code class="docutils literal notranslate"><span class="pre">OrchestratorError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.AgentNotFoundError"><code class="docutils literal notranslate"><span class="pre">AgentNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.TaskDispatchError"><code class="docutils literal notranslate"><span class="pre">TaskDispatchError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/nexus_orchestrator.html#module-nexus_orchestrator">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/nexus_orchestrator.html#nexus_orchestrator.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymbioCTF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">symbio_ctf.models</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for symbio_ctf.models</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Data models for the CTF engine</span>
+
+<span class="sd">This module defines the core data structures used throughout the SymbioCTF engine,</span>
+<span class="sd">including challenges, flags, matches, and scoring models.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+
+<div class="viewcode-block" id="validate_flag_format">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.validate_flag_format">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_flag_format</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate flag format matches expected pattern.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        value: Flag value to validate</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        True if valid format, False otherwise</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Accept standard CTF flag format: prefix{content}</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9_]+\{[a-zA-Z0-9]{8,}\}$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="sanitize_input">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.sanitize_input">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">sanitize_input</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sanitize string input by removing potentially dangerous characters.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        value: Input string to sanitize</span>
+<span class="sd">        max_length: Maximum allowed length</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Sanitized string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must be a string&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Truncate to max length</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[:</span><span class="n">max_length</span><span class="p">]</span>
+    
+    <span class="c1"># Remove null bytes and control characters</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">value</span> <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">32</span> <span class="ow">or</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;</span><span class="se">\n\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="ChallengeType">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.ChallengeType">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ChallengeType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Types of CTF challenges available.&quot;&quot;&quot;</span>
+    <span class="n">PROMPT_INJECTION</span> <span class="o">=</span> <span class="s2">&quot;prompt_injection&quot;</span>
+    <span class="n">SECRET_LEAKAGE</span> <span class="o">=</span> <span class="s2">&quot;secret_leakage&quot;</span>
+    <span class="n">DATA_POISONING</span> <span class="o">=</span> <span class="s2">&quot;data_poisoning&quot;</span>
+    <span class="n">TOOL_ABUSE</span> <span class="o">=</span> <span class="s2">&quot;tool_abuse&quot;</span>
+    <span class="n">LOGIC_LOOP</span> <span class="o">=</span> <span class="s2">&quot;logic_loop&quot;</span>
+    <span class="n">CONTEXT_OVERFLOW</span> <span class="o">=</span> <span class="s2">&quot;context_overflow&quot;</span>
+    <span class="n">ALIGNMENT_BREAK</span> <span class="o">=</span> <span class="s2">&quot;alignment_break&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="Difficulty">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Difficulty">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Difficulty</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Challenge difficulty levels.&quot;&quot;&quot;</span>
+    <span class="n">EASY</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">MEDIUM</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">HARD</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">EXPERT</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">IMPOSSIBLE</span> <span class="o">=</span> <span class="mi">5</span></div>
+
+
+
+<div class="viewcode-block" id="MatchState">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.MatchState">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">MatchState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Possible states for a CTF match.&quot;&quot;&quot;</span>
+    <span class="n">PENDING</span> <span class="o">=</span> <span class="s2">&quot;pending&quot;</span>
+    <span class="n">ACTIVE</span> <span class="o">=</span> <span class="s2">&quot;active&quot;</span>
+    <span class="n">RESOLVED</span> <span class="o">=</span> <span class="s2">&quot;resolved&quot;</span>
+    <span class="n">TIMEOUT</span> <span class="o">=</span> <span class="s2">&quot;timeout&quot;</span>
+    <span class="n">ABORTED</span> <span class="o">=</span> <span class="s2">&quot;aborted&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="Challenge">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Challenge">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Challenge</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A CTF challenge definition.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        id: Unique challenge identifier</span>
+<span class="sd">        type: Type of challenge</span>
+<span class="sd">        difficulty: Difficulty level</span>
+<span class="sd">        description: Human-readable challenge description</span>
+<span class="sd">        max_points: Maximum points achievable</span>
+<span class="sd">        time_limit: Time limit in seconds</span>
+<span class="sd">        metadata: Additional challenge metadata</span>
+<span class="sd">        created_at: Unix timestamp when challenge was created</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())[:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">ChallengeType</span> <span class="o">=</span> <span class="n">ChallengeType</span><span class="o">.</span><span class="n">PROMPT_INJECTION</span>
+    <span class="n">difficulty</span><span class="p">:</span> <span class="n">Difficulty</span> <span class="o">=</span> <span class="n">Difficulty</span><span class="o">.</span><span class="n">MEDIUM</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">max_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">time_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span>  <span class="c1"># seconds</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Challenge.__post_init__">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Challenge.__post_init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate challenge data after initialization.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">sanitize_input</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_points</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_points</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;max_points must be a non-negative integer&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_limit</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_limit</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;time_limit must be a positive integer&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Flag">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Flag">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Flag</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A flag to be captured during a match.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        match_id: ID of the associated match</span>
+<span class="sd">        value: Flag value string</span>
+<span class="sd">        created_at: Unix timestamp when flag was generated</span>
+<span class="sd">        captured: Whether the flag has been captured</span>
+<span class="sd">        captured_by: Agent ID that captured the flag</span>
+<span class="sd">        captured_at: Unix timestamp when flag was captured</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">match_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">captured</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">captured_by</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">captured_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Flag.__post_init__">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Flag.__post_init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate flag data after initialization.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">validate_flag_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid flag format: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">match_id</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;match_id cannot be empty&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Match">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Match">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Match</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A CTF match between agents.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        id: Unique match identifier</span>
+<span class="sd">        challenge: Associated challenge definition</span>
+<span class="sd">        target_agent_id: ID of the defending agent</span>
+<span class="sd">        attacker_agent_ids: List of attacking agent IDs</span>
+<span class="sd">        state: Current match state</span>
+<span class="sd">        flags: List of flags in this match</span>
+<span class="sd">        scores: Dictionary mapping agent IDs to scores</span>
+<span class="sd">        started_at: Unix timestamp when match started</span>
+<span class="sd">        resolved_at: Unix timestamp when match ended</span>
+<span class="sd">        metadata: Additional match metadata</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())[:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">challenge</span><span class="p">:</span> <span class="n">Challenge</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">target_agent_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">attacker_agent_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">MatchState</span> <span class="o">=</span> <span class="n">MatchState</span><span class="o">.</span><span class="n">PENDING</span>
+    <span class="n">flags</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Flag</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">scores</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">started_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">resolved_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Match.__post_init__">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.Match.__post_init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate match data after initialization.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_agent_id</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;target_agent_id cannot be empty&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attacker_agent_ids</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;attacker_agent_ids must be a list&quot;</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_active</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the match is currently active.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">MatchState</span><span class="o">.</span><span class="n">ACTIVE</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">elapsed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get elapsed time since match start in seconds.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">started_at</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_at</span> <span class="ow">or</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">started_at</span></div>
+
+
+
+<div class="viewcode-block" id="ScoreResult">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.ScoreResult">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScoreResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Result from a score calculation.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        success: Whether the scoring operation was successful</span>
+<span class="sd">        points: Points awarded</span>
+<span class="sd">        agent_id: ID of the agent being scored</span>
+<span class="sd">        match_id: ID of the associated match</span>
+<span class="sd">        message: Result message</span>
+<span class="sd">        timestamp: Unix timestamp when result was generated</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">points</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">match_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AgentScore">
+<a class="viewcode-back" href="../../api/symbio_ctf.html#symbio_ctf.models.AgentScore">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentScore</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Agent&#39;s cumulative score statistics.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        agent_id: Unique agent identifier</span>
+<span class="sd">        total_points: Total points accumulated</span>
+<span class="sd">        matches_played: Number of matches participated in</span>
+<span class="sd">        matches_won: Number of matches won</span>
+<span class="sd">        flags_captured: Total flags captured</span>
+<span class="sd">        survival_hours: Total hours survived as defender</span>
+<span class="sd">        reputation: Reputation score (1000-2000)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">total_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">matches_played</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">matches_won</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">flags_captured</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">survival_hours</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">reputation</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SymbioCTF Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

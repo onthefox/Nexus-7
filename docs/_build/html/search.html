@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search &mdash; SymbioCTF 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SymbioCTF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-steps">Installation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#docker-installation">Docker Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#creating-a-ctf-match">Creating a CTF Match</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#working-with-agents">Working with Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#using-nexus-orchestrator">Using Nexus Orchestrator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-examples">Running Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-nexus_orchestrator.models">nexus_orchestrator.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input"><code class="docutils literal notranslate"><span class="pre">sanitize_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name"><code class="docutils literal notranslate"><span class="pre">validate_agent_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.AgentState"><code class="docutils literal notranslate"><span class="pre">AgentState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority"><code class="docutils literal notranslate"><span class="pre">TaskPriority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.models.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-nexus_orchestrator.orchestrator">nexus_orchestrator.orchestrator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.OrchestratorError"><code class="docutils literal notranslate"><span class="pre">OrchestratorError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.AgentNotFoundError"><code class="docutils literal notranslate"><span class="pre">AgentNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.TaskDispatchError"><code class="docutils literal notranslate"><span class="pre">TaskDispatchError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nexus_orchestrator.html#module-nexus_orchestrator">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nexus_orchestrator.html#nexus_orchestrator.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SymbioCTF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Search</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SymbioCTF Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <script>
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script id="searchindexloader"></script>
+   
+
+
+</body>
+</html>

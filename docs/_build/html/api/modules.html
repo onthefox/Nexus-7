@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nexus_orchestrator &mdash; SymbioCTF 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nexus_orchestrator package" href="nexus_orchestrator.html" />
+    <link rel="prev" title="SymbioCTF Documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SymbioCTF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#module-nexus_orchestrator.models">nexus_orchestrator.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input"><code class="docutils literal notranslate"><span class="pre">sanitize_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name"><code class="docutils literal notranslate"><span class="pre">validate_agent_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState"><code class="docutils literal notranslate"><span class="pre">AgentState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority"><code class="docutils literal notranslate"><span class="pre">TaskPriority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#module-nexus_orchestrator.orchestrator">nexus_orchestrator.orchestrator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.OrchestratorError"><code class="docutils literal notranslate"><span class="pre">OrchestratorError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.AgentNotFoundError"><code class="docutils literal notranslate"><span class="pre">AgentNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.TaskDispatchError"><code class="docutils literal notranslate"><span class="pre">TaskDispatchError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#module-nexus_orchestrator">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SymbioCTF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">nexus_orchestrator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nexus-orchestrator">
+<h1>nexus_orchestrator<a class="headerlink" href="#nexus-orchestrator" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nexus_orchestrator.html">nexus_orchestrator package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nexus_orchestrator.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_orchestrator.html#module-nexus_orchestrator.models">nexus_orchestrator.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.sanitize_input"><code class="docutils literal notranslate"><span class="pre">sanitize_input()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.validate_agent_name"><code class="docutils literal notranslate"><span class="pre">validate_agent_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType.MCP"><code class="docutils literal notranslate"><span class="pre">ProtocolType.MCP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType.A2A"><code class="docutils literal notranslate"><span class="pre">ProtocolType.A2A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.ProtocolType.CHAT"><code class="docutils literal notranslate"><span class="pre">ProtocolType.CHAT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState"><code class="docutils literal notranslate"><span class="pre">AgentState</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState.REGISTERED"><code class="docutils literal notranslate"><span class="pre">AgentState.REGISTERED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState.IDLE"><code class="docutils literal notranslate"><span class="pre">AgentState.IDLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState.RUNNING"><code class="docutils literal notranslate"><span class="pre">AgentState.RUNNING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState.PAUSED"><code class="docutils literal notranslate"><span class="pre">AgentState.PAUSED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState.ERROR"><code class="docutils literal notranslate"><span class="pre">AgentState.ERROR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentState.TERMINATED"><code class="docutils literal notranslate"><span class="pre">AgentState.TERMINATED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority"><code class="docutils literal notranslate"><span class="pre">TaskPriority</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority.LOW"><code class="docutils literal notranslate"><span class="pre">TaskPriority.LOW</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority.NORMAL"><code class="docutils literal notranslate"><span class="pre">TaskPriority.NORMAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority.HIGH"><code class="docutils literal notranslate"><span class="pre">TaskPriority.HIGH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskPriority.CRITICAL"><code class="docutils literal notranslate"><span class="pre">TaskPriority.CRITICAL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.name"><code class="docutils literal notranslate"><span class="pre">AgentConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.protocol"><code class="docutils literal notranslate"><span class="pre">AgentConfig.protocol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.endpoint"><code class="docutils literal notranslate"><span class="pre">AgentConfig.endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.capabilities"><code class="docutils literal notranslate"><span class="pre">AgentConfig.capabilities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.max_tokens"><code class="docutils literal notranslate"><span class="pre">AgentConfig.max_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.timeout"><code class="docutils literal notranslate"><span class="pre">AgentConfig.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.metadata"><code class="docutils literal notranslate"><span class="pre">AgentConfig.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id0"><code class="docutils literal notranslate"><span class="pre">AgentConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id1"><code class="docutils literal notranslate"><span class="pre">AgentConfig.protocol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id2"><code class="docutils literal notranslate"><span class="pre">AgentConfig.endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id3"><code class="docutils literal notranslate"><span class="pre">AgentConfig.capabilities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id4"><code class="docutils literal notranslate"><span class="pre">AgentConfig.max_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id5"><code class="docutils literal notranslate"><span class="pre">AgentConfig.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id6"><code class="docutils literal notranslate"><span class="pre">AgentConfig.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.__post_init__"><code class="docutils literal notranslate"><span class="pre">AgentConfig.__post_init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentConfig.__init__"><code class="docutils literal notranslate"><span class="pre">AgentConfig.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.agent_id"><code class="docutils literal notranslate"><span class="pre">AgentStatus.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.config"><code class="docutils literal notranslate"><span class="pre">AgentStatus.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.state"><code class="docutils literal notranslate"><span class="pre">AgentStatus.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.health"><code class="docutils literal notranslate"><span class="pre">AgentStatus.health</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.tasks_completed"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_completed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.tasks_failed"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_failed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.last_seen"><code class="docutils literal notranslate"><span class="pre">AgentStatus.last_seen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.token_usage"><code class="docutils literal notranslate"><span class="pre">AgentStatus.token_usage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id7"><code class="docutils literal notranslate"><span class="pre">AgentStatus.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id8"><code class="docutils literal notranslate"><span class="pre">AgentStatus.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id9"><code class="docutils literal notranslate"><span class="pre">AgentStatus.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id10"><code class="docutils literal notranslate"><span class="pre">AgentStatus.health</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id11"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_completed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id12"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_failed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id13"><code class="docutils literal notranslate"><span class="pre">AgentStatus.last_seen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id14"><code class="docutils literal notranslate"><span class="pre">AgentStatus.token_usage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.AgentStatus.__init__"><code class="docutils literal notranslate"><span class="pre">AgentStatus.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.id"><code class="docutils literal notranslate"><span class="pre">Task.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.description"><code class="docutils literal notranslate"><span class="pre">Task.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.payload"><code class="docutils literal notranslate"><span class="pre">Task.payload</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.priority"><code class="docutils literal notranslate"><span class="pre">Task.priority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.assigned_agents"><code class="docutils literal notranslate"><span class="pre">Task.assigned_agents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.timeout"><code class="docutils literal notranslate"><span class="pre">Task.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.created_at"><code class="docutils literal notranslate"><span class="pre">Task.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.metadata"><code class="docutils literal notranslate"><span class="pre">Task.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id15"><code class="docutils literal notranslate"><span class="pre">Task.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id16"><code class="docutils literal notranslate"><span class="pre">Task.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id17"><code class="docutils literal notranslate"><span class="pre">Task.payload</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id18"><code class="docutils literal notranslate"><span class="pre">Task.priority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id19"><code class="docutils literal notranslate"><span class="pre">Task.assigned_agents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id20"><code class="docutils literal notranslate"><span class="pre">Task.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id21"><code class="docutils literal notranslate"><span class="pre">Task.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id22"><code class="docutils literal notranslate"><span class="pre">Task.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.Task.__init__"><code class="docutils literal notranslate"><span class="pre">Task.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.task_id"><code class="docutils literal notranslate"><span class="pre">TaskResult.task_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.agent_id"><code class="docutils literal notranslate"><span class="pre">TaskResult.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.success"><code class="docutils literal notranslate"><span class="pre">TaskResult.success</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.output"><code class="docutils literal notranslate"><span class="pre">TaskResult.output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.error"><code class="docutils literal notranslate"><span class="pre">TaskResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.tokens_used"><code class="docutils literal notranslate"><span class="pre">TaskResult.tokens_used</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.duration"><code class="docutils literal notranslate"><span class="pre">TaskResult.duration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.timestamp"><code class="docutils literal notranslate"><span class="pre">TaskResult.timestamp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id23"><code class="docutils literal notranslate"><span class="pre">TaskResult.task_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id24"><code class="docutils literal notranslate"><span class="pre">TaskResult.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id25"><code class="docutils literal notranslate"><span class="pre">TaskResult.success</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id26"><code class="docutils literal notranslate"><span class="pre">TaskResult.output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id27"><code class="docutils literal notranslate"><span class="pre">TaskResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id28"><code class="docutils literal notranslate"><span class="pre">TaskResult.tokens_used</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id29"><code class="docutils literal notranslate"><span class="pre">TaskResult.duration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id30"><code class="docutils literal notranslate"><span class="pre">TaskResult.timestamp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.models.TaskResult.__init__"><code class="docutils literal notranslate"><span class="pre">TaskResult.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_orchestrator.html#module-nexus_orchestrator.orchestrator">nexus_orchestrator.orchestrator module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.OrchestratorError"><code class="docutils literal notranslate"><span class="pre">OrchestratorError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.AgentNotFoundError"><code class="docutils literal notranslate"><span class="pre">AgentNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.TaskDispatchError"><code class="docutils literal notranslate"><span class="pre">TaskDispatchError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator._agents"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._agents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator._task_queue"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._task_queue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator._task_results"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._task_results</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator._running"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._running</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.__init__"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.register_agent"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.register_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.get_agent_status"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.get_agent_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.list_agents"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.list_agents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.update_agent_state"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.update_agent_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.shutdown_agent"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.shutdown_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.health_check"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.health_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.create_task"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.create_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.dispatch_task"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.dispatch_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.get_task_results"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.get_task_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.list_tasks"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.list_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.translate_protocol"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.translate_protocol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.start"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.stop"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.orchestrator.NexusOrchestrator.reset"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.reset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_orchestrator.html#module-nexus_orchestrator">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator._agents"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._agents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator._task_queue"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._task_queue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator._task_results"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._task_results</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator._running"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator._running</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.__init__"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.register_agent"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.register_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.get_agent_status"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.get_agent_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.list_agents"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.list_agents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.update_agent_state"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.update_agent_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.shutdown_agent"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.shutdown_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.health_check"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.health_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.create_task"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.create_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.dispatch_task"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.dispatch_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.get_task_results"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.get_task_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.list_tasks"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.list_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.translate_protocol"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.translate_protocol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.start"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.stop"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.NexusOrchestrator.reset"><code class="docutils literal notranslate"><span class="pre">NexusOrchestrator.reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig"><code class="docutils literal notranslate"><span class="pre">AgentConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.name"><code class="docutils literal notranslate"><span class="pre">AgentConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.protocol"><code class="docutils literal notranslate"><span class="pre">AgentConfig.protocol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.endpoint"><code class="docutils literal notranslate"><span class="pre">AgentConfig.endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.capabilities"><code class="docutils literal notranslate"><span class="pre">AgentConfig.capabilities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.max_tokens"><code class="docutils literal notranslate"><span class="pre">AgentConfig.max_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.timeout"><code class="docutils literal notranslate"><span class="pre">AgentConfig.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.metadata"><code class="docutils literal notranslate"><span class="pre">AgentConfig.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id31"><code class="docutils literal notranslate"><span class="pre">AgentConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id32"><code class="docutils literal notranslate"><span class="pre">AgentConfig.protocol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id33"><code class="docutils literal notranslate"><span class="pre">AgentConfig.endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id34"><code class="docutils literal notranslate"><span class="pre">AgentConfig.capabilities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id35"><code class="docutils literal notranslate"><span class="pre">AgentConfig.max_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id36"><code class="docutils literal notranslate"><span class="pre">AgentConfig.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id37"><code class="docutils literal notranslate"><span class="pre">AgentConfig.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.__post_init__"><code class="docutils literal notranslate"><span class="pre">AgentConfig.__post_init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentConfig.__init__"><code class="docutils literal notranslate"><span class="pre">AgentConfig.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus"><code class="docutils literal notranslate"><span class="pre">AgentStatus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.agent_id"><code class="docutils literal notranslate"><span class="pre">AgentStatus.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.config"><code class="docutils literal notranslate"><span class="pre">AgentStatus.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.state"><code class="docutils literal notranslate"><span class="pre">AgentStatus.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.health"><code class="docutils literal notranslate"><span class="pre">AgentStatus.health</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.tasks_completed"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_completed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.tasks_failed"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_failed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.last_seen"><code class="docutils literal notranslate"><span class="pre">AgentStatus.last_seen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.token_usage"><code class="docutils literal notranslate"><span class="pre">AgentStatus.token_usage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id38"><code class="docutils literal notranslate"><span class="pre">AgentStatus.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id39"><code class="docutils literal notranslate"><span class="pre">AgentStatus.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id40"><code class="docutils literal notranslate"><span class="pre">AgentStatus.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id41"><code class="docutils literal notranslate"><span class="pre">AgentStatus.health</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id42"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_completed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id43"><code class="docutils literal notranslate"><span class="pre">AgentStatus.tasks_failed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id44"><code class="docutils literal notranslate"><span class="pre">AgentStatus.last_seen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id45"><code class="docutils literal notranslate"><span class="pre">AgentStatus.token_usage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.AgentStatus.__init__"><code class="docutils literal notranslate"><span class="pre">AgentStatus.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.id"><code class="docutils literal notranslate"><span class="pre">Task.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.description"><code class="docutils literal notranslate"><span class="pre">Task.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.payload"><code class="docutils literal notranslate"><span class="pre">Task.payload</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.priority"><code class="docutils literal notranslate"><span class="pre">Task.priority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.assigned_agents"><code class="docutils literal notranslate"><span class="pre">Task.assigned_agents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.timeout"><code class="docutils literal notranslate"><span class="pre">Task.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.created_at"><code class="docutils literal notranslate"><span class="pre">Task.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.metadata"><code class="docutils literal notranslate"><span class="pre">Task.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id46"><code class="docutils literal notranslate"><span class="pre">Task.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id47"><code class="docutils literal notranslate"><span class="pre">Task.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id48"><code class="docutils literal notranslate"><span class="pre">Task.payload</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id49"><code class="docutils literal notranslate"><span class="pre">Task.priority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id50"><code class="docutils literal notranslate"><span class="pre">Task.assigned_agents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id51"><code class="docutils literal notranslate"><span class="pre">Task.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id52"><code class="docutils literal notranslate"><span class="pre">Task.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id53"><code class="docutils literal notranslate"><span class="pre">Task.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.Task.__init__"><code class="docutils literal notranslate"><span class="pre">Task.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult"><code class="docutils literal notranslate"><span class="pre">TaskResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.task_id"><code class="docutils literal notranslate"><span class="pre">TaskResult.task_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.agent_id"><code class="docutils literal notranslate"><span class="pre">TaskResult.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.success"><code class="docutils literal notranslate"><span class="pre">TaskResult.success</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.output"><code class="docutils literal notranslate"><span class="pre">TaskResult.output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.error"><code class="docutils literal notranslate"><span class="pre">TaskResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.tokens_used"><code class="docutils literal notranslate"><span class="pre">TaskResult.tokens_used</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.duration"><code class="docutils literal notranslate"><span class="pre">TaskResult.duration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.timestamp"><code class="docutils literal notranslate"><span class="pre">TaskResult.timestamp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id54"><code class="docutils literal notranslate"><span class="pre">TaskResult.task_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id55"><code class="docutils literal notranslate"><span class="pre">TaskResult.agent_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id56"><code class="docutils literal notranslate"><span class="pre">TaskResult.success</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id57"><code class="docutils literal notranslate"><span class="pre">TaskResult.output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id58"><code class="docutils literal notranslate"><span class="pre">TaskResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id59"><code class="docutils literal notranslate"><span class="pre">TaskResult.tokens_used</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id60"><code class="docutils literal notranslate"><span class="pre">TaskResult.duration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#id61"><code class="docutils literal notranslate"><span class="pre">TaskResult.timestamp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.TaskResult.__init__"><code class="docutils literal notranslate"><span class="pre">TaskResult.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.ProtocolType"><code class="docutils literal notranslate"><span class="pre">ProtocolType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.ProtocolType.MCP"><code class="docutils literal notranslate"><span class="pre">ProtocolType.MCP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.ProtocolType.A2A"><code class="docutils literal notranslate"><span class="pre">ProtocolType.A2A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nexus_orchestrator.html#nexus_orchestrator.ProtocolType.CHAT"><code class="docutils literal notranslate"><span class="pre">ProtocolType.CHAT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="SymbioCTF Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nexus_orchestrator.html" class="btn btn-neutral float-right" title="nexus_orchestrator package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, SymbioCTF Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

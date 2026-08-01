@@ -1,8 +1,15 @@
 """
 Tests for Nexus-7 CTF-OS Ecosystem
+
+This module contains comprehensive tests for all core components:
+- SymbioCTF: CTF engine and match management
+- NexusOrchestrator: Multi-agent coordination
+- Gauntlet: Autonomous red-teaming
+- Efficiency: Token optimization middleware
+- Alignment: Constitutional AI guardrails
+- Ledger: Blockchain trust layer
 """
 
-import pytest
 import sys
 import os
 
@@ -11,7 +18,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 class TestSymbioCTF:
+    """Test suite for SymbioCTF CTF engine."""
+    
     def test_create_challenge(self):
+        """Test challenge creation with various parameters."""
         from core.symbio_ctf import SymbioCTF
         from core.symbio_ctf.models import ChallengeType, Difficulty
 
@@ -45,6 +55,7 @@ class TestSymbioCTF:
 
     def test_flag_submission(self):
         from core.symbio_ctf import SymbioCTF
+        from core.symbio_ctf.engine import InvalidFlagError
         from core.symbio_ctf.models import ChallengeType, Difficulty
 
         ctf = SymbioCTF()
@@ -52,9 +63,13 @@ class TestSymbioCTF:
         match = ctf.create_match("target-001", challenge.id, ["attacker-001"])
         ctf.start_match(match.id)
 
-        # Submit invalid flag
-        result = ctf.submit_flag(match.id, "nexus7{invalid}", "attacker-001")
-        assert not result.success
+        # Submit invalid flag - should raise InvalidFlagError
+        import pytest
+        try:
+            result = ctf.submit_flag(match.id, "nexus7{invalid}", "attacker-001")
+            assert False, "Should have raised InvalidFlagError"
+        except InvalidFlagError:
+            pass  # Expected
 
         # Submit valid flag
         valid_flag = match.flags[0].value

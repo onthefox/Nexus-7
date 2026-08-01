@@ -101,15 +101,19 @@ class TestCTFExtended:
 
     def test_invalid_match_operations(self):
         from core.symbio_ctf import SymbioCTF
+        from core.symbio_ctf.engine import MatchNotFoundError, ChallengeNotFoundError
         from core.symbio_ctf.models import ChallengeType, Difficulty
 
         ctf = SymbioCTF()
 
-        with pytest.raises(ValueError):
+        with pytest.raises(MatchNotFoundError):
             ctf.start_match("nonexistent")
 
-        with pytest.raises(ValueError):
+        with pytest.raises(MatchNotFoundError):
             ctf.resolve_match("nonexistent")
+        
+        with pytest.raises(ChallengeNotFoundError):
+            ctf.create_match("agent-001", "nonexistent-challenge")
 
     def test_list_challenges(self):
         from core.symbio_ctf import SymbioCTF
