@@ -1,7 +1,7 @@
-```
 # Python
 __pycache__/
 *.py[cod]
+*.pyc
 *$py.class
 *.so
 .Python
@@ -36,8 +36,15 @@ ENV/
 # Logs
 *.log
 
+# Audit artifacts
+audit-*/audit-log.json
+
 # Coverage
 .coverage
 coverage/
 htmlcov/
-```
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

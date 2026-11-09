@@ -12,7 +12,23 @@ known-first-party = ["core", "engine", "meta", "ui"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-v --tb=short"
+asyncio_mode = "auto"
+addopts = "-v --tb=short --cov=core --cov=engine --cov=meta --cov=ui --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["core", "engine", "meta", "ui"]
+omit = [
+    "*/__pycache__/*",
+    "*/templates/*",
+]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
 
 [tool.mypy]
 python_version = "3.11"

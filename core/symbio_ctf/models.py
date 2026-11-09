@@ -75,7 +75,7 @@ def sanitize_input(value: str, max_length: int = 1000) -> str:
         'hello world'
     """
     if not isinstance(value, str):
-        raise TypeError(f"Expected string, got {type(value).__name__}")
+        raise ValueError(f"Expected string, got {type(value).__name__}")
     
     # Truncate to max length
     value = value[:max_length]
