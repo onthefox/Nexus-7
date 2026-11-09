@@ -6,7 +6,18 @@ from pydantic import BaseModel
 from typing import Optional
 import os
 
+from .rate_limit_middleware import RateLimitMiddleware
+
 app = FastAPI(title="Nexus-7 CTF Dashboard")
+
+# Rate limiting (v1.0 roadmap); configured via environment, see .env.example
+app.add_middleware(
+    RateLimitMiddleware,
+    max_requests=int(os.environ.get("RATE_LIMIT_REQUESTS_PER_MINUTE", "60")),
+    window_seconds=60,
+    block_duration_seconds=int(os.environ.get("RATE_LIMIT_BLOCK_SECONDS", "300")),
+    trust_forwarded_for=os.environ.get("RATE_LIMIT_TRUST_PROXY", "false").lower() == "true",
+)
 
 # Templates
 templates = Jinja2Templates(directory="ui/ctf_dashboard/templates")
@@ -27,8 +38,7 @@ class ChallengeCreate(BaseModel):
 
 @app.get("/", response_class=HTMLResponse)
 async def dashboard(request: Request):
-    return templates.TemplateResponse("index.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "index.html", {
         "matches": matches,
         "leaderboard": leaderboard,
         "agents": agents,
@@ -36,15 +46,13 @@ async def dashboard(request: Request):
 
 @app.get("/agents", response_class=HTMLResponse)
 async def agents_page(request: Request):
-    return templates.TemplateResponse("agents.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "agents.html", {
         "agents": agents,
     })
 
 @app.get("/matches", response_class=HTMLResponse)
 async def matches_page(request: Request):
-    return templates.TemplateResponse("matches.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "matches.html", {
         "matches": matches,
     })
 

@@ -30,14 +30,14 @@ def sanitize_input(value: str, max_length: int = 1000) -> str:
         Sanitized string
         
     Raises:
-        TypeError: If input is not a string
+        ValueError: If input is not a string
         
     Example:
         >>> sanitize_input("  hello world  ", max_length=20)
         'hello world'
     """
     if not isinstance(value, str):
-        raise TypeError(f"Expected string, got {type(value).__name__}")
+        raise ValueError(f"Expected string, got {type(value).__name__}")
     
     # Truncate to max length
     value = value[:max_length]
@@ -121,6 +121,8 @@ class AgentConfig:
 
     def __post_init__(self) -> None:
         """Validate agent configuration after initialization."""
+        if isinstance(self.protocol, str):
+            self.protocol = ProtocolType(self.protocol)
         if not validate_agent_name(self.name):
             raise ValueError(
                 f"Invalid agent name '{self.name}'. "

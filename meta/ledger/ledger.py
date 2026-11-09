@@ -110,14 +110,27 @@ class NexusLedger:
         return log
 
     def verify_chain(self) -> bool:
-        """Verify the integrity of the entire chain."""
+        """Verify the integrity of the entire chain.
+
+        Detects three tampering classes:
+        1. Value tampering: any modified field breaks the recomputed hash.
+        2. Entry deletion/reordering: sequence IDs must be contiguous
+           (``log-000001``, ``log-000002``, ...), so gaps betray removal.
+        3. Tail truncation: the stored chain hash must match the hash of the
+           last surviving entry.
+        """
         current_hash = "0" * 64
-        for log in self._logs:
+        for index, log in enumerate(self._logs, start=1):
+            expected_id = f"log-{index:06d}"
+            if log.id != expected_id:
+                return False
             data = f"{log.source_agent}:{log.target_agent}:{log.action}:{log.result}:{current_hash}"
             expected = hashlib.sha256(data.encode()).hexdigest()
             if expected != log.hash:
                 return False
             current_hash = log.hash
+        if self._chain_hash != current_hash:
+            return False
         return True
 
     def get_logs(self, agent_id: str | None = None, limit: int = 100) -> list[InteractionLog]:

@@ -208,6 +208,45 @@ class Gauntlet:
         self._redteam_sessions: dict[str, bool] = {}
         self._ctf = ctf_engine
         self._orchestrator = orchestrator
+        self._shannon_adapter: Any | None = None
+
+    # ── Shannon Integration ──────────────────────────────────────────
+
+    def attach_shannon(self, adapter) -> None:
+        """Attach a Shannon agent adapter (engine.gauntlet.adapters.ShannonAgentAdapter).
+
+        Once attached, :meth:`launch_shannon_attack` executes real attacks
+        through the adapter's MCP endpoint instead of the built-in simulator.
+        """
+        self._shannon_adapter = adapter
+
+    def has_shannon(self) -> bool:
+        """True when a Shannon adapter is attached."""
+        return self._shannon_adapter is not None
+
+    async def launch_shannon_attack(
+        self,
+        target_id: str,
+        attack_type: AttackType | str,
+    ) -> AttackResult:
+        """Execute one attack via the attached Shannon adapter over MCP.
+
+        Raises:
+            RuntimeError: If no Shannon adapter has been attached.
+            ValueError: If the target is unknown or the attack type is invalid.
+        """
+        if self._shannon_adapter is None:
+            raise RuntimeError(
+                "No Shannon adapter attached. Call attach_shannon() first."
+            )
+        if target_id not in self._targets:
+            raise ValueError(f"Target {target_id} not deployed")
+        if isinstance(attack_type, str):
+            attack_type = AttackType(attack_type)
+
+        result = await self._shannon_adapter.launch_attack(target_id, attack_type)
+        self._attack_results.append(result)
+        return result
 
     # ── Deployment ────────────────────────────────────────────────────
 
@@ -353,3 +392,4 @@ class Gauntlet:
         self._targets.clear()
         self._attack_results.clear()
         self._redteam_sessions.clear()
+        self._shannon_adapter = None
